@@ -1,17 +1,18 @@
 <template>
-  <div class="flex flex-col gap-2">
-    <h1>{{ $t("Connexion") }}</h1>
+  <h1 class="title-large">{{ $t("Connexion") }}</h1>
 
-    <Input type="text" />
-    <Input icon filled type="password">
-      <Icon name="google" stroke="none" />
-    </Input>
-    <Input outlined type="password" />
-    <Input icon outlined type="password">
-      <Icon name="google" stroke="none" />
-    </Input>
+  <form class="flex flex-col gap-2" novalidate @submit.prevent="onSubmit">
+    <label class="label flex flex-col gap-1">
+      {{ $t("Email") }}
+      <Input type="text" />
+    </label>
 
-    <Button filled>
+    <label class="label flex flex-col gap-1">
+      {{ $t("Password") }}
+      <Input type="password" />
+    </label>
+
+    <Button filled type="submit">
       <span>{{ $t("Se connecter") }}</span>
     </Button>
     <NuxtLink to="/auth/register">
@@ -19,9 +20,17 @@
         <span>{{ $t("S'inscrire") }}</span>
       </Button>
     </NuxtLink>
-  </div>
+  </form>
 </template>
 
 <script setup lang="ts">
 const { $t } = useNuxtApp();
+const user = useUser();
+
+function onSubmit(evt: Event) {
+  const htmlFormEl = evt.target as HTMLFormElement;
+  if (htmlFormEl.checkValidity()) {
+    user.value = "user";
+  }
+}
 </script>

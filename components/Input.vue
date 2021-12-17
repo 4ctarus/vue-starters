@@ -31,7 +31,7 @@ export default {
 
 <style scoped lang="scss">
 .input {
-  @apply relative label-large rounded-lg overflow-hidden h-14 bg-surface text-on-surface;
+  @apply relative rounded-lg overflow-hidden h-14 bg-surface text-on-surface;
 
   input {
     @apply absolute inset-0 flex items-center rounded-lg px-4 w-full h-full bg-transparent body-large;

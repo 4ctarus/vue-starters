@@ -8,10 +8,14 @@
     stroke-linecap="round"
     stroke-linejoin="round"
   >
-    <use :href="`/assets/icons.svg#${name}`" />
+    <use :href="imageUrl" />
   </svg>
 </template>
 
 <script setup lang="ts">
-defineProps<{ name: string }>();
+const props = defineProps<{ name: string }>();
+
+const imageUrl = computed(() => {
+  return `/assets/icons.svg#${props.name}`;
+});
 </script>

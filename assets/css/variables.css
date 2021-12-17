@@ -1,0 +1,55 @@
+body {
+  --primary: 76 83 186;
+  --on-primary: 255 255 255;
+  --primary-container: 76 83 186;
+  --on-primary-container: 0 0 111;
+  --secondary: 191 0 53;
+  --on-secondary: 255 255 255;
+  --secondary-container: 191 0 53;
+  --on-secondary-container: 65 0 11;
+  --tertiary: 0 108 70;
+  --on-tertiary: 255 255 255;
+  --tertiary-container: 0 108 70;
+  --on-tertiary-container: 0 33 18;
+  --error: 186 27 27;
+  --on-error: 255 255 255;
+  --error-container: 186 27 27;
+  --on-error-container: 65 0 1;
+  --background: 255 251 255;
+  --on-background: 27 27 31;
+  --surface: 255 251 255;
+  --on-surface: 27 27 31;
+  --outline: 119 118 128;
+  --surface-variant: 228 225 236;
+  --on-surface-variant: 70 70 79;
+  --inverse-surface: 49 48 52;
+  --inverse-on-surface: 243 240 245;
+}
+
+.dark-theme {
+  --primary: 189 194 255;
+  --on-primary: 25 30 138;
+  --primary-container: 189 194 255;
+  --on-primary-container: 223 224 255;
+  --secondary: 255 178 183;
+  --on-secondary: 104 0 24;
+  --secondary-container: 255 178 183;
+  --on-secondary-container: 255 218 220;
+  --tertiary: 112 218 166;
+  --on-tertiary: 0 56 34;
+  --tertiary-container: 112 218 166;
+  --on-tertiary-container: 141 247 193;
+  --error: 255 180 169;
+  --on-error: 104 0 3;
+  --error-container: 255 180 169;
+  --on-error-container: 255 218 212;
+  --background: 27 27 31;
+  --on-background: 228 225 230;
+  --surface: 27 27 31;
+  --on-surface: 228 225 230;
+  --outline: 145 144 154;
+  --surface-variant: 70 70 79;
+  --on-surface-variant: 199 197 208;
+  --inverse-surface: 228 225 230;
+  --inverse-on-surface: 27 27 31;
+}

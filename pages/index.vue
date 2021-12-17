@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1 class="text-3xl font-bold underline">Index</h1>
+  <div class="flex flex-col gap-4 p-4">
+    <h1 class="headline">Index</h1>
 
-    <NuxtLink to="/auth/login"> Login </NuxtLink>
+    <NuxtLink to="/home"> Home </NuxtLink>
   </div>
 </template>

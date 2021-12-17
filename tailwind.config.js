@@ -1,4 +1,11 @@
-const plugin = require("tailwindcss/plugin");
+function withOpacityValue(variable) {
+  return ({ opacityValue }) => {
+    if (opacityValue === undefined) {
+      return `rgb(var(${variable}))`;
+    }
+    return `rgb(var(${variable}) / ${opacityValue})`;
+  };
+}
 
 module.exports = {
   content: [
@@ -11,32 +18,31 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#3d5ba9",
-        "on-primary": "#ffffff",
-        "primary-container": "#3d5ba9",
-        "on-primary-container": "#00174d",
-        secondary: "#585e71",
-        "on-secondary": "#ffffff",
-        "secondary-container": "#585e71",
-        "on-secondary-container": "#151b2c",
-        tertiary: "#735470",
-        "on-tertiary": "#ffffff",
-        "tertiary-container": "#735470",
-        "on-tertiary-container": "#2b122b",
-        error: "#ba1b1b",
-        "on-error": "#ffffff",
-        "error-container": "#ba1b1b",
-        "on-error-container": "#410001",
-        background: "#fefbff",
-        "on-background": "#1b1b1f",
-        surface: "#fefbff",
-        "on-surface": "#1b1b1f",
-        outline: "#75767f",
-        "surface-variant": "#e2e2ec",
-        "on-surface-variant": "#44464e",
-        "inverse-surface": "#303033",
-        "inverse-on-surface": "#f2f0f5",
-        outline: "#79747E",
+        primary: withOpacityValue("--primary"),
+        "on-primary": withOpacityValue("--on-primary"),
+        "primary-container": withOpacityValue("--primary-container"),
+        "on-primary-container": withOpacityValue("--on-primary-container"),
+        secondary: withOpacityValue("--secondary"),
+        "on-secondary": withOpacityValue("--on-secondary"),
+        "secondary-container": withOpacityValue("--secondary-container"),
+        "on-secondary-container": withOpacityValue("--on-secondary-container"),
+        tertiary: withOpacityValue("--tertiary"),
+        "on-tertiary": withOpacityValue("--on-tertiary"),
+        "tertiary-container": withOpacityValue("--tertiary-container"),
+        "on-tertiary-container": withOpacityValue("--on-tertiary-container"),
+        error: withOpacityValue("--error"),
+        "on-error": withOpacityValue("--on-error"),
+        "error-container": withOpacityValue("--error-container"),
+        "on-error-container": withOpacityValue("--on-error-container"),
+        background: withOpacityValue("--background"),
+        "on-background": withOpacityValue("--on-background"),
+        surface: withOpacityValue("--surface"),
+        "on-surface": withOpacityValue("--on-surface"),
+        "surface-variant": withOpacityValue("--surface-variant"),
+        "on-surface-variant": withOpacityValue("--on-surface-variant"),
+        "inverse-surface": withOpacityValue("--inverse-surface"),
+        "inverse-on-surface": withOpacityValue("--inverse-on-surface"),
+        outline: withOpacityValue("--outline"),
         disabled: "#1f1f1f",
       },
       boxShadow: {
@@ -49,11 +55,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    // plugin(function ({ addComponents, theme }) {
-    //   addComponents({
-    //     ".": {},
-    //   });
-    // }),
-  ],
+  plugins: [],
 };
