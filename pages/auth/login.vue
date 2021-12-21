@@ -24,13 +24,15 @@
 </template>
 
 <script setup lang="ts">
+import useToken from "~~/composables/useToken";
+
 const { $t } = useNuxtApp();
-const user = useUser();
+const token = useToken();
 
 function onSubmit(evt: Event) {
   const htmlFormEl = evt.target as HTMLFormElement;
   if (htmlFormEl.checkValidity()) {
-    user.value = "user";
+    token.value = "token";
   }
 }
 </script>

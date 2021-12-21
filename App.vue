@@ -6,29 +6,37 @@
 
 <script setup>
 const router = useRouter();
-const user = useUser();
+const route = useRoute();
+const isLogged = useIsLogged();
+const routeAfterAuth = useRouteAfterAuth();
+
+const restrictedRouteName = ["home"];
+
+if (!isLogged.value && restrictedRouteName.includes(route.name)) {
+  // access to need auth page but is not logged
+  routeAfterAuth.value = { name: route.name };
+  router.push({ name: "auth-login" });
+}
 
 watch(
-  () => user.value,
-  (user, prevUser) => {
-    if (user && !prevUser) {
-      router.push({ path: "/home" });
+  () => isLogged.value,
+  (isLogged, prevIsLogged) => {
+    console.log(isLogged, prevIsLogged, routeAfterAuth.value);
+    if (isLogged && !prevIsLogged) {
+      // has logged
+      router.push(routeAfterAuth.value);
     }
   }
 );
 
 router.beforeEach((to, from) => {
   console.log(to.name);
-  switch (to.name) {
-    // need login
-    case "home":
-      if (!user.value) {
-        return "/auth/login";
-      }
-      break;
 
-    default:
-      return;
+  if (!isLogged.value && restrictedRouteName.includes(to.name)) {
+    routeAfterAuth.value = to;
+    return { name: "auth-login" };
   }
+
+  return;
 });
 </script>
