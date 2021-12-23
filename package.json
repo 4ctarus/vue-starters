@@ -6,7 +6,8 @@
     "start": "node .output/server/index.mjs",
     "lint": "eslint --ext .ts,.js,.vue .",
     "lint-fix": "eslint --ext .ts,.js,.vue . --fix",
-    "test": "npm run lint-fix"
+    "test": "npm run lint-fix",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
@@ -22,6 +23,7 @@
     "postcss": "^8.4.5",
     "sass": "^1.45.0",
     "tailwindcss": "^3.0.2",
-    "vue-eslint-parser": "latest"
+    "vue-eslint-parser": "latest",
+    "husky": "^7.0.0"
   }
 }
