@@ -1,19 +1,19 @@
 <template>
-  <h1 class="title-large">{{ $t("Connexion") }}</h1>
+  <h1 class="title-large">{{ $t('Connexion') }}</h1>
 
   <form class="flex flex-col gap-2" novalidate @submit.prevent="onSubmit">
     <label class="label flex flex-col gap-1">
-      {{ $t("Email") }}
+      {{ $t('Email') }}
       <Input type="text" />
     </label>
 
     <label class="label flex flex-col gap-1">
-      {{ $t("Password") }}
+      {{ $t('Password') }}
       <Input type="password" />
     </label>
 
     <Button filled type="submit">
-      <span>{{ $t("Se connecter") }}</span>
+      <span>{{ $t('Se connecter') }}</span>
     </Button>
     <NuxtLink to="/auth/register">
       <Button>
@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import useToken from "~~/composables/useToken";
+import useToken from '~~/composables/useToken';
 
 const { $t } = useNuxtApp();
 const token = useToken();
@@ -32,7 +32,7 @@ const token = useToken();
 function onSubmit(evt: Event) {
   const htmlFormEl = evt.target as HTMLFormElement;
   if (htmlFormEl.checkValidity()) {
-    token.value = "token";
+    token.value = 'token';
   }
 }
 </script>

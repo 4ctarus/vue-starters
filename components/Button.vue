@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { Color } from "~~/types/global";
+import { computed } from 'vue';
+import { Color } from '~~/types/global';
 
 const props = withDefaults(
   defineProps<{
@@ -12,17 +12,17 @@ const props = withDefaults(
   }>(),
   {
     color: Color.primary,
-  }
+  },
 );
 
 const classes = computed(() => ({
-  "button-filled": props.filled,
-  "button-outlined": props.outlined,
-  "button-large": props.large,
-  "button-icon": props.icon,
-  "button-primary": props.color === Color.primary,
-  "button-secondary": props.color === Color.secondary,
-  "button-tertiary": props.color === Color.tertiary,
+  'button-filled': props.filled,
+  'button-outlined': props.outlined,
+  'button-large': props.large,
+  'button-icon': props.icon,
+  'button-primary': props.color === Color.primary,
+  'button-secondary': props.color === Color.secondary,
+  'button-tertiary': props.color === Color.tertiary,
 }));
 </script>
 

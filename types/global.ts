@@ -1,5 +1,5 @@
 export enum Color {
-  "primary",
-  "secondary",
-  "tertiary",
+  'primary',
+  'secondary',
+  'tertiary',
 }

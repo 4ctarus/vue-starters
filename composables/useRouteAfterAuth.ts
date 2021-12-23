@@ -1,8 +1,8 @@
-import { useState } from "#app";
-import { RouteLocationRaw } from "vue-router";
+import { RouteLocationRaw } from 'vue-router';
+import { useState } from '#app';
 
 export default function () {
-  return useState<RouteLocationRaw>("routeAfterAuth", () => ({
-    name: "home",
+  return useState<RouteLocationRaw>('routeAfterAuth', () => ({
+    name: 'home',
   }));
 }

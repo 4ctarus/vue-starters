@@ -1,8 +1,8 @@
-import { useState } from "#app";
+import { useState } from '#app';
 
 export default function () {
-  const tokenCookie = useCookie("token");
-  const token = useState<string>("token", () => tokenCookie.value);
+  const tokenCookie = useCookie('token');
+  const token = useState<string>('token', () => tokenCookie.value);
 
   return customRef((track, trigger) => {
     return {

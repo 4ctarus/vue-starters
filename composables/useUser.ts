@@ -1,7 +1,7 @@
-import { useState } from "#app";
+import { useState } from '#app';
 
 export default function () {
-  const user = useState<{ user: string; loaded: Date }>("user", () => {
+  const user = useState<{ user: string; loaded: Date }>('user', () => {
     return {
       loaded: null,
       user: null,
@@ -14,7 +14,7 @@ export default function () {
         track();
         // get user from back if not loaded
         if (!user.value.loaded) {
-          console.log("load from back");
+          console.log('load from back');
         }
 
         return user.value.user;

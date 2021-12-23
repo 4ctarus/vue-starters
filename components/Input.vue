@@ -1,5 +1,5 @@
 <script lang="ts">
-import { computed } from "vue";
+import { computed } from 'vue';
 
 export default {
   inheritAttrs: false,
@@ -10,9 +10,9 @@ export default {
   },
   setup(props) {
     const classes = computed(() => ({
-      "input-filled": props.filled || (!props.filled && !props.outlined),
-      "input-outlined": props.outlined,
-      "input-icon": props.icon,
+      'input-filled': props.filled || (!props.filled && !props.outlined),
+      'input-outlined': props.outlined,
+      'input-icon': props.icon,
     }));
 
     return {
