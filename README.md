@@ -1,1 +1,1 @@
-# Vue 3 starters
+# Vue 3 + Typescript + + Eslint + Prettier + Vite
