@@ -11,6 +11,7 @@ import HelloWorld from './components/HelloWorld.vue';
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   @apply text-center text-[#2c3e50] mt-16;
 }
 </style>
