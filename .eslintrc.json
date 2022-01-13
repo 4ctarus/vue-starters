@@ -8,6 +8,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-recommended",
     "plugin:import/typescript",
+    "plugin:tailwindcss/recommended",
     "prettier"
   ],
   "parser": "vue-eslint-parser",
@@ -16,7 +17,7 @@
     "parser": "@typescript-eslint/parser",
     "sourceType": "module"
   },
-  "plugins": ["vue", "@typescript-eslint", "import", "prettier"],
+  "plugins": ["vue", "@typescript-eslint", "import", "tailwindcss", "prettier"],
   "rules": {
     "no-unused-vars": "off",
     "vue/no-unused-vars": "warn",
